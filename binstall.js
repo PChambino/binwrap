@@ -43,7 +43,7 @@ function untgz(url, path, options) {
     });
 
     request
-      .get(url, function(error, response) {
+      .get(url, {'user-agent': 'binwrap'}, function(error, response) {
         if (error) {
           reject("Error communicating with URL " + url + " " + error);
           return;
@@ -98,7 +98,7 @@ function unzipUrl(url, path, options) {
       });
 
     request
-      .get(url, function(error, response) {
+      .get(url, {'user-agent': 'binwrap'}, function(error, response) {
         if (error) {
           reject("Error communicating with URL " + url + " " + error);
           return;
